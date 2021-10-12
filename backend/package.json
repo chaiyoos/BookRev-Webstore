@@ -1,0 +1,17 @@
+{
+  "name": "book_review",
+  "version": "1.0.0",
+  "description": "book review project",
+  "main": "server.js",
+  "scripts": {
+    "start":"nodemon ./server.js"
+    
+  },
+  "author": "ab_1902",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10",
+    "nodemon": "^2.0.13"
+  }
+}
