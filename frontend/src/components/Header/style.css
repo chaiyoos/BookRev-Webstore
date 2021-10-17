@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.main-nav a {
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #1b1a17;
+}
+
+.session-nav a {
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #1b1a17;
+}
+
+.main-nav a:hover {
+  color: #ff8303;
+}
+
+.session-nav a:hover {
+  color: #ff8303;
+}
+
+.logo {
+  margin-right: 1rem;
+  display: inline-block;
+  font-weight: 900;
+}
