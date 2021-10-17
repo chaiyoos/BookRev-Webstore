@@ -10,6 +10,7 @@ const Hero = (props) => {
         <p className="description">
           A decentralised fair playground for all bookworms!
         </p>
+        <div className="o-box"></div>
       </div>
       <img src={img} alt="hero img1" className="hero-img" />
     </div>

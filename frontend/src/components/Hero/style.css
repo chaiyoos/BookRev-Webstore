@@ -33,3 +33,10 @@
 .description {
   font-size: 1.5rem;
 }
+
+.o-box {
+  margin-top: 4rem;
+  background-color: #ff8303;
+  height: 1.5rem;
+  width: 50%;
+}
