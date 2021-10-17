@@ -1,19 +1,39 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   margin: 1rem 0;
+}
+.navbar {
+  display: flex;
+}
+
+.main-nav {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.session-nav {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .main-nav a {
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   text-decoration: none;
   color: #1b1a17;
 }
 
 .session-nav a {
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   text-decoration: none;
   color: #1b1a17;
 }
@@ -27,7 +47,33 @@
 }
 
 .logo {
-  margin-right: 1rem;
-  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  font-size: 1.5rem;
   font-weight: 900;
+}
+
+.search-container {
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-inp {
+  width: inherit;
+  border-radius: 0.3rem;
+  border: 0.1rem solid #1b1a17;
+}
+
+.class-inp::placeholder {
+  text-align: center;
+}
+
+.class-inp:focus {
+  border-radius: 0.3rem;
+  border-width: 0.1rem;
+  border-color: #1b1a17;
 }
