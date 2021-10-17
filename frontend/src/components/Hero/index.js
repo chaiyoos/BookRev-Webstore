@@ -5,7 +5,7 @@ import "./style.css";
 const Hero = (props) => {
   return (
     <div>
-      <Card />
+      <Card>Book 1</Card>
     </div>
   );
 };
