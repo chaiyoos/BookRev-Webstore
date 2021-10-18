@@ -66,14 +66,31 @@
   width: inherit;
   border-radius: 0.3rem;
   border: 0.1rem solid #1b1a17;
+  transition: width 0.2s ease-in;
 }
 
 .class-inp::placeholder {
   text-align: center;
 }
 
+.class-inp.active {
+  width: 70%;
+}
+
 .class-inp:focus {
   border-radius: 0.3rem;
   border-width: 0.1rem;
-  border-color: #1b1a17;
+  border-color: #ff8303;
+}
+
+.search-icon {
+  margin: 0 1rem;
+}
+
+.search-icon.inactive {
+  display: none;
+}
+
+.search-icon.active {
+  display: inline-block;
 }
