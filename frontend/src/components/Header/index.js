@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Header = (props) => {
@@ -20,13 +21,13 @@ const Header = (props) => {
           <p className="logo">BookRev.</p>
         </div>
         <div className="main-nav col-3">
-          <a href="#">Home</a>
-          <a href="#">Explore</a>
-          <a href="#">Wallet</a>
+          <Link to="/">Home</Link>
+          <Link to="/explore">Explore</Link>
+          <Link to="/wallet">Wallet</Link>
         </div>
         <div className="session-nav col-2">
-          <a href="#">Sign In</a>
-          <a href="#">Sign Up</a>
+          <Link to="/signin">Sign In</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </div>
       <div className="row search-container justify-content-center">
