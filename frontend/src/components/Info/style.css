@@ -1,0 +1,40 @@
+.info {
+  margin-top: 5rem;
+  width: 100%;
+  height: 60vh;
+}
+
+.info-img {
+  background-color: white;
+  width: 30vw;
+  position: relative;
+  top: 5rem;
+  display: inline-block;
+  margin: auto 8rem;
+}
+
+.info-content {
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-right: 3rem;
+  width: 40vw;
+  margin-top: 3rem;
+}
+
+.question {
+  font-weight: 800;
+}
+
+.points {
+  margin-top: 2rem;
+}
+
+.pts-ic {
+  display: inline-block;
+}
+
+.pts {
+  display: inline-block;
+}
