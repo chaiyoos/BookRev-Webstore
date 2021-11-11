@@ -1,4 +1,47 @@
 .card {
   background-color: white;
   padding: 1rem 0.5rem;
+  width: 15vw;
+  height: 45vh;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-rating {
+  display: flex;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.card-info {
+  margin: 0rem 0.5rem;
+}
+
+.card-img-cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-img {
+  width: 60%;
+}
+
+.card-btn {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 0.2rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card-author {
+  font-size: 0.7rem;
+  margin: 0;
 }

@@ -1,0 +1,70 @@
+.explore-cont {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: coral; */
+}
+
+.explore-title {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.explore-cards-row {
+  margin: 2rem;
+  display: flex;
+  margin-bottom: 3rem;
+  /* background-color: cadetblue; */
+}
+
+.explore-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.explore-filter {
+  background-color: rgb(255, 255, 255);
+  width: 20vw;
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+
+.filter-cat {
+  margin-left: 0.2rem;
+  margin-top: 1rem;
+}
+
+.filter-btn {
+  width: 70%;
+  height: 5vh;
+  margin-left: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter-heading {
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.filter-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.filter-img {
+  width: 30%;
+}
+
+.lib-cursive {
+  font-family: "Satisfy", cursive;
+  font-size: 3.2rem;
+  color: #ff8303;
+  text-decoration: underline;
+}
