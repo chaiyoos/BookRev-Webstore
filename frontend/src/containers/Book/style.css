@@ -1,0 +1,112 @@
+.book-page-cont {
+  margin-top: 2rem;
+}
+
+.img-cont {
+  /* background-color: lawngreen; */
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-page-img {
+  width: 50%;
+}
+
+.book-info {
+  /* background-color: lightsalmon; */
+  padding: 2rem;
+}
+
+.book-title {
+  font-weight: 700;
+}
+
+.book-rating {
+  display: flex;
+}
+
+.rated-text {
+  margin-right: 0.5rem;
+}
+
+.book-genre {
+  width: 12%;
+  height: 7%;
+  background-color: #f8bc80;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+.book-description {
+  margin-top: 1rem;
+}
+
+.book-buy-text {
+  font-weight: 600;
+}
+
+.buy-btn {
+  margin-right: 1rem;
+  width: 20%;
+  border-radius: 0.4rem;
+  border: none;
+  padding: 0.4rem 0;
+}
+
+.buy-amazon {
+  color: white;
+  background-color: black;
+  padding-right: 0.7rem;
+}
+
+.amz-logo {
+  width: 15%;
+  margin-right: 0.5rem;
+}
+
+.buy-flipkart {
+  color: white;
+  background-color: #047bd5;
+  padding-right: 0.7rem;
+}
+
+.flp-logo {
+  width: 14%;
+  margin-right: 0.5rem;
+}
+
+.buy-tfb {
+  color: white;
+  background-color: #525252;
+}
+
+.tfb-logo {
+  width: 14%;
+  margin-right: 0.5rem;
+}
+
+.book-review-section {
+  padding: 3rem 0;
+  padding-left: 8rem;
+}
+
+.reviews-title {
+}
+
+.reviews-hr {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  width: 98%;
+}
+
+.review-card-cont {
+  width: 100%;
+  margin-top: 1rem;
+  /* margin-left: 0.5rem; */
+}

@@ -10,6 +10,7 @@ import Explore from "./containers/Explore";
 import Footer from "./components/Footer";
 import SignIn from "./containers/Signin";
 import SignUp from "./containers/Signup";
+import Book from "./containers/Book";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/wallet" component={Home}></Route>
         <Route exact path="/signin" component={SignIn}></Route>
         <Route exact path="/signup" component={SignUp}></Route>
+        <Route exact path="/book" component={Book}></Route>
         <Footer />
       </div>
     </Router>

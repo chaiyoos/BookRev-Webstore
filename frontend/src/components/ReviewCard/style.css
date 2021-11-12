@@ -1,0 +1,24 @@
+.review-cont {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  padding: 1.5rem 2rem;
+}
+
+.review-name {
+  font-weight: 600;
+}
+/* #ff8303 */
+
+.review-likes {
+  display: flex;
+}
+
+.review-likes-count {
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+
+.review-heart-icon {
+  margin-top: 0.1rem;
+}
