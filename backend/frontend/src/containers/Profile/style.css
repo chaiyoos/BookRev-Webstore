@@ -1,0 +1,34 @@
+.profile-container {
+  padding: 0;
+  width: 100%;
+  margin-top: 3rem;
+}
+.profileimg {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+.profile_details {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile_counts {
+  display: flex;
+}
+.profile_count_item {
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+}
+.review-card-profile {
+  margin-top: 1rem;
+  width: 100%;
+}
+.profile-reviews-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

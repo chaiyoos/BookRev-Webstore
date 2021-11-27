@@ -1,57 +1,58 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import img from "../../assets/read3.png";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const SignUp = () => {
-      const [details,setDetails]=useState({
-        fname:'',
-        lname:'',
-        email:'',
-        password:'',
-        
-      })
+  const [details, setDetails] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+  });
 
-    const handleChange=(e) => {
-        let value=e.target.value
-        let name=e.target.name
+  let history = useHistory();
 
-        setDetails((prevalue)=>{
-            return{
-                ...prevalue,
-                [name]:value
-            }
-        })
+  const handleChange = (e) => {
+    let value = e.target.value;
+    let name = e.target.name;
 
+    setDetails((prevalue) => {
+      return {
+        ...prevalue,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: details.fname + " " + details.lname,
+      email: details.email,
+      password: details.password,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    try {
+      const res = await axios.post("/user/register", data, headers);
+      console.log(res.data);
+      if (res.data.loggedIn) {
+        history.push("/explore");
+      }
+    } catch (error) {
+      console.error(error.message);
     }
 
-    const handleSubmit= async (e) => {
-        e.preventDefault()
-        
-        const data={
-            name:details.fname+ ' ' +details.lname ,
-            email:details.email,
-            password:details.password,
-         }
-        const headers={
-            'Content-Type':'application/json'
-        }
-        try {
-            const res=await axios.post("/user/register",data,headers)
-            console.log(res.data)
-            if(res.data.loggedIn){
-              history.push("/explore")
-            } 
-        } catch (error) {
-            console.error(error.message)
-        }
-        
-        console.log(data)
-    }
-      
+    console.log(data);
+  };
+
   return (
     <div className="signup">
-      <form className="signup-form" onSubmit={handleSubmit} >
+      <form className="signup-form" onSubmit={handleSubmit}>
         <h3 className="signup-h">SignUp</h3>
 
         <img src={img} alt="signup img" className="form-img" />
@@ -116,4 +117,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp
+export default SignUp;

@@ -1,56 +1,54 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import img from "../../assets/read3.png";
-import axios from 'axios'
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Explore from "../Explore";
 
 const Signin = () => {
-      const [details,setDetails]=useState({
-        email:'',
-        password:''
-    })
-    let history=useHistory()
+  const [details, setDetails] = useState({
+    email: "",
+    password: "",
+  });
+  let history = useHistory();
 
-    const handleChange=(e) => {
-        let value=e.target.value
-        let name=e.target.name
+  const handleChange = (e) => {
+    let value = e.target.value;
+    let name = e.target.name;
 
-        setDetails((prevalue)=>{
-            return{
-                ...prevalue,
-                [name]:value
-            }
-        })
+    setDetails((prevalue) => {
+      return {
+        ...prevalue,
+        [name]: value,
+      };
+    });
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: details.email,
+      password: details.password,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    try {
+      const res = await axios.post("/user/login", data, headers);
+      console.log(res.data);
+      if (res.data.loggedIn) {
+        history.push("/explore");
+      }
+    } catch (error) {
+      console.error(error.message);
     }
 
-    const handleSubmit= async (e) => {
-        e.preventDefault()
-        
-        const data={
-            email:details.email,
-            password:details.password
-        }
-        const headers={
-            'Content-Type':'application/json'
-        }
-        try {
-            const res=await axios.post("/user/login",data,headers)
-            console.log(res.data)
-            if(res.data.loggedIn){
-              history.push("/explore")
-            } 
-            
-        } catch (error) {
-            console.error(error.message)
-        }
-        
-        console.log(data,headers)
-    }
+    console.log(data, headers);
+  };
   return (
     <div className="signin">
-      <form className="signin-form" onSubmit={handleSubmit} >
+      <form className="signin-form" onSubmit={handleSubmit}>
         <h3 className="signin-h">signin</h3>
 
         <img src={img} alt="signin img" className="form-img" />
@@ -109,7 +107,6 @@ const Signin = () => {
           </div>
         </div>
       </form>
-      
     </div>
   );
 };
