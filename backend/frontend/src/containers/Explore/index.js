@@ -1,11 +1,64 @@
-import React from "react";
-
+import {React,useState,useEffect} from "react";
+import axios from 'axios'
 import Card from "../../components/Card";
 import FilterButton from "../../components/FilterButton";
 import img from "../../assets/filter.png";
 import "./style.css";
 
 const Explore = () => {
+
+  const [post,setPost]=useState([])
+
+  useEffect(() => {
+    const mounted = async () =>{
+      const res=await axios.get("/books")
+      const books=res.data
+      setPost(books)
+    }
+    mounted()
+  } ,[])
+
+  let renderBooks
+  if(post.length>0){
+    console.log(post)
+     renderBooks=post.map((post)=>{
+      return(
+      <div className="container explore-cards">
+        <div className="container explore-cards">
+          <div className="row explore-cards-row">
+            <div className="col">
+              <Card
+                className="explore-card"
+                title={post.name}
+                author={post.author}
+                imgsrc={post.imageLink}
+                rating={3}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      )
+    })
+  }
+  
+ 
+  // <div className="container explore-cards">
+          
+  //         <div className="row explore-cards-row">
+  //           <div className="col">
+  //             <Card
+  //               className="explore-card"
+  //               title="The richest man in Babylon"
+  //               author="George S. Clason"
+  //               imgsrc="https://m.media-amazon.com/images/I/51pYZS7IWcL.jpg"
+  //               rating={3}
+  //             />
+  //           </div>
+  //         </div>
+  // </div>
+
+
   return (
     <div className="explore-main">
       <div className="explore-filter">
@@ -42,9 +95,11 @@ const Explore = () => {
           Rummage through our <span className="lib-cursive">library!</span>
         </h1>
 
-        <div className="container explore-cards">
+       
+
+          {renderBooks}
           {/* row 1 */}
-          <div className="row explore-cards-row">
+          {/* <div className="row explore-cards-row">
             <div className="col">
               <Card
                 className="explore-card"
@@ -62,8 +117,8 @@ const Explore = () => {
                 imgsrc="https://m.media-amazon.com/images/I/51pYZS7IWcL.jpg"
                 rating={3}
               />
-            </div>
-            <div className="col">
+            </div> */}
+            {/* <div className="col">
               <Card
                 className="explore-card"
                 title="The richest man in Babylon"
@@ -80,10 +135,10 @@ const Explore = () => {
                 imgsrc="https://m.media-amazon.com/images/I/51pYZS7IWcL.jpg"
                 rating={3}
               />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           {/* row 2 */}
-          <div className="row explore-cards-row">
+          {/* <div className="row explore-cards-row">
             <div className="col">
               <Card
                 className="explore-card"
@@ -119,11 +174,11 @@ const Explore = () => {
                 imgsrc="https://m.media-amazon.com/images/I/51pYZS7IWcL.jpg"
                 rating={3}
               />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
-    </div>
+    
   );
 };
 

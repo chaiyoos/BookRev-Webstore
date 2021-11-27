@@ -45,7 +45,7 @@ router.post("/register",async (req,res)=>{
 
         jwt.sign(payload,config.get("JWTsecret"),{expiresIn:360000},function(err,token){
             if(err) throw err
-            res.json({"dataSent":true,token})
+            res.json({dataSent:true,token,firstlogin:true})
         })
 
         console.log(req.body)
@@ -100,7 +100,7 @@ router.post("/login", async(req,res) => {
 
         jwt.sign(payload,config.get("JWTsecret"),{expiresIn:360000},function(err,token){
             if (err) throw err
-            res.json({"logged in":true,token})
+            res.json({loggedIn:true,token})
         })
 
         console.log(req.body)

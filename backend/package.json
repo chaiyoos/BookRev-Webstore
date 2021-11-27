@@ -4,12 +4,15 @@
   "description": "book review project",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "server":"nodemon ./server.js",
+    "client":"npm start --prefix frontend",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "author": "ab_1902",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^6.4.0",
     "config": "^3.3.6",
     "express": "^4.17.1",
     "joi": "^17.4.2",

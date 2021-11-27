@@ -1,0 +1,101 @@
+.signin {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5rem;
+  }
+  
+  .signin-form {
+    width: 40%;
+    background-color: white;
+    border: 0.1rem solid #1b1a17;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 3rem;
+    /* box-shadow: 0px 0px 30px 0.5px rgba(27, 26, 23, 0.1); */
+  }
+  
+  .signin-h {
+    align-self: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .form-img {
+    width: 15vw;
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+  
+  .test {
+    background-color: khaki;
+  }
+  
+  .names {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .half {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .others {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .half input {
+    height: 5vh;
+    margin: 0.5rem 0;
+    border: 0.1rem solid #1b1a17;
+    border-radius: 0.5rem;
+  }
+  
+  .half input::placeholder {
+    padding-left: 1rem;
+  }
+  
+  .half label {
+    margin-top: 0.5rem;
+  }
+  
+  .full input {
+    height: 5vh;
+    margin: 0.5rem 0;
+    border: 0.1rem solid #1b1a17;
+    border-radius: 0.5rem;
+  }
+  
+  .full input::placeholder {
+    padding-left: 1rem;
+  }
+  
+  .full label {
+    margin-top: 0.5rem;
+  }
+  
+  .fullbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signinbtn {
+    height: 5vh;
+    color: white;
+    background-color: #ff8303;
+    border: none;
+    border-radius: 0.5rem;
+    width: 40%;
+    margin-top: 2rem;
+  }
+  
