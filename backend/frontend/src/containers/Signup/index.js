@@ -40,7 +40,7 @@ const SignUp = () => {
     try {
       const res = await axios.post("/user/register", data, headers);
       console.log(res.data);
-      if (res.data.loggedIn) {
+      if (res.data.dataSent) {
         history.push("/explore");
       }
     } catch (error) {
