@@ -10,28 +10,37 @@ const Explore = () => {
 
   useEffect(() => {
     const mounted = async () => {
-      const res = await axios.get("/books");
-      const books = res.data;
-      setPost(books);
+      try {
+        const res = await axios.get("/books");
+        const books = res.data;
+        setPost(books);
+      } catch (error) {
+        console.error(error.message)
+      }
+     
     };
     mounted();
   }, []);
 
   let renderBooks;
   if (post.length > 0) {
-    console.log(post);
+    
     renderBooks = post.map((post) => {
+      // console.log(post._id)
       return (
-        <div className="col-3">
+        <div className="col-3"  >
           <Card
+            key={post._id}
             className="explore-card"
             title={post.name}
             author={post.author}
             imgsrc={post.imageLink}
             rating={3}
+           
           />
         </div>
       );
+      
     });
   }
 
@@ -49,6 +58,10 @@ const Explore = () => {
   //           </div>
   //         </div>
   // </div>
+
+  // const checkUser=()=>{
+    
+  // }
 
   return (
     <div className="explore-main">

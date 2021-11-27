@@ -17,7 +17,15 @@ const UserSchema=new mongoose.Schema({
     reviewPoints:{
         type:Number,
         default:0
-    }
+    },
+    reviews:
+        [
+            {
+                type:String,
+                ref:'Books'
+            }
+        ]
+    
 
 })
 

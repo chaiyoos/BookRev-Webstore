@@ -82,10 +82,12 @@ router.post("/post/reviews/:id",auth,async (req,res) => {
         }else{
             user.reviewPoints+=5
         }
-        console.log(user.reviewPoints)
-        await user.save()
         await book.save()
-        res.json({"success":true,"comments":book.comments}) 
+        const reviewText=book.comments[0].text
+        user.reviews.unshift(reviewText)
+        await user.save()
+        
+        res.json({"success":true,"comments":book.comments,reviewsByUser:user.reviews}) 
     } catch (error) {
         console.error(error.message)
         res.status(500).json({"error":error.message})
@@ -94,6 +96,8 @@ router.post("/post/reviews/:id",auth,async (req,res) => {
     console.log(req.body)
     
 })
+
+
 
 //LIKING A REVIEW
 

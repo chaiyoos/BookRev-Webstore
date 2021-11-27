@@ -36,16 +36,25 @@ const Signin = () => {
     };
     try {
       const res = await axios.post("/user/login", data, headers);
-      console.log(res.data);
       if (res.data.loggedIn) {
         history.push("/explore");
       }
+      console.log(res.data.user)
+      // const dataSet={
+      //   'user':JSON.stringify(res.data.user),
+      //   'token':JSON.stringify(res.data.token)
+      // }
+      localStorage.setItem('user',res.data.user)
+      localStorage.setItem('token',res.data.token)
     } catch (error) {
       console.error(error.message);
     }
 
     console.log(data, headers);
   };
+
+
+
   return (
     <div className="signin">
       <form className="signin-form" onSubmit={handleSubmit}>

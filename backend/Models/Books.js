@@ -1,5 +1,6 @@
 const mongoose=require("mongoose")
 const joi=require("joi")
+const { number } = require("joi")
 const BookSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -16,6 +17,9 @@ const BookSchema=new mongoose.Schema({
     imageLink:{
         type:String,
         required:true
+    },
+    rating:{
+        type:Number
     },
     comments:[
         {

@@ -1,10 +1,12 @@
 import React from "react";
 import BookRevButton from "../Button";
 import "./style.css";
+import {Link} from 'react-router-dom'
 
 const Card = (props) => {
+  
   return (
-    <div className="card">
+    <div className="card" key={props.key} >
       <div className="card-info">
         <h6 className="card-title">{props.title}</h6>
         <p className="card-author">
@@ -31,7 +33,7 @@ const Card = (props) => {
         <img src={props.imgsrc} alt="card-img" className="card-img" />
       </div>
       <div className="card-btn">
-        <BookRevButton value="View" />
+        <Link exact to="/book" ><BookRevButton value="View"  /></Link>
       </div>
     </div>
   );

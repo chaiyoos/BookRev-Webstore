@@ -81,14 +81,14 @@ router.post("/login", async(req,res) => {
         var user=await User.findOne({email})
 
         if(!user){
-            res.status(400).json({message:"invalid credentials"})
+            res.status(400).json({message:"invalid email"})
         }
 
         //comparing passwords
         const isMatch=await bcrypt.compare(password,user.password)
 
         if(!isMatch){
-            res.status(400).json({error:"invalid credentials"})
+            res.status(400).json({error:"invalid password"})
         }
 
         //returning jwt
@@ -100,8 +100,13 @@ router.post("/login", async(req,res) => {
 
         jwt.sign(payload,config.get("JWTsecret"),{expiresIn:360000},function(err,token){
             if (err) throw err
-            res.json({loggedIn:true,token})
+            res.json({loggedIn:true,token,userID:payload.user.id,user:user.name})
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('token', token);
+            }
         })
+
+        
 
         console.log(req.body)
 
@@ -115,5 +120,44 @@ router.post("/login", async(req,res) => {
     // res.send("login route")
 
 })
+
+// router.get("/getToken",async(req,res)=>{
+    
+//     if (typeof window !== 'undefined') {
+//         const token=localStorage.getItem('token');
+//         console.log(token)
+//     }
+//     res.json({message:"route working"})
+// })
+
+router.get("/profile",async(req,res)=>{
+    const token=req.headers["x-auth-token"]
+    if(!token){
+        res.status(400).json({message:"User not logged in"})
+    }
+    const payload=jwt.verify(token,config.get("JWTsecret"),{ignoreExpiration:true})
+    
+    
+    try {
+        const user=await User.findById(payload.user.id)
+        res.json({message:"route working",user})
+    } catch (error) {
+        console.error(error.message)
+    }
+   
+})
+
+//to be completed later
+router.get("/getReviewByUser",async(req,res)=>{
+    const token=req.headers["x-auth-token"]
+    if(!token){
+        res.status(400).json({message:"User not logged in"})
+    }
+    const payload=jwt.verify(token,config.get("JWTsecret"),{ignoreExpiration:true})
+    const user=await User.findById(payload.user.id)
+    const reviews=user.reviews
+    res.json({message:"route working",reviews})
+})
+
 
 module.exports= router

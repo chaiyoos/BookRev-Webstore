@@ -14,7 +14,14 @@ const Header = (props) => {
     ? "bi bi-search search-icon active"
     : "bi bi-search search-icon inactive";
 
+    const user=localStorage.getItem('user')
+    
+    
+
   return (
+
+   
+
     <header className="header">
       <div className="navbar row">
         <div className="col-2 logo-container">
@@ -26,6 +33,7 @@ const Header = (props) => {
           <Link to="/wallet">Wallet</Link>
         </div>
         <div className="session-nav col-2">
+
           <Link to="/signin">Sign In</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
@@ -52,6 +60,7 @@ const Header = (props) => {
         </div>
       </div>
     </header>
+    
   );
 };
 
