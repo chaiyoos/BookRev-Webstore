@@ -6,7 +6,14 @@ import {Link} from 'react-router-dom'
 const Card = (props) => {
   
   return (
-    <div className="card" key={props.key} >
+    <div className="card" key={props.key} 
+      bookID={props.bookID}
+      className="explore-card"
+      title={props.title}
+      author={props.author}
+      imgsrc={props.imageLink}
+      rating={3}
+    >
       <div className="card-info">
         <h6 className="card-title">{props.title}</h6>
         <p className="card-author">
@@ -33,7 +40,7 @@ const Card = (props) => {
         <img src={props.imgsrc} alt="card-img" className="card-img" />
       </div>
       <div className="card-btn">
-        <Link exact to="/book" ><BookRevButton value="View"  /></Link>
+        <Link exact to={`/books/${props.bookID}`} ><BookRevButton value="View"  /></Link>
       </div>
     </div>
   );

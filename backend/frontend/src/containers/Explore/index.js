@@ -5,7 +5,7 @@ import FilterButton from "../../components/FilterButton";
 import img from "../../assets/filter.png";
 import "./style.css";
 
-const Explore = () => {
+const Explore = (props) => {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const Explore = () => {
         <div className="col-3"  >
           <Card
             key={post._id}
+            bookID={post._id}
             className="explore-card"
             title={post.name}
             author={post.author}

@@ -3,6 +3,7 @@ import "./style.css";
 import { FaUserCircle } from "react-icons/fa";
 import ReviewCard from "../../components/ReviewCard";
 import axios from "axios";
+
 const Profile = (props) => {
   const [user,setUser]=useState({})
   const [comments,setComments]=useState([])

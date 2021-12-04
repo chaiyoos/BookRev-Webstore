@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/wallet" component={Home}></Route>
         <Route exact path="/signin" component={SignIn}></Route>
         <Route exact path="/signup" component={SignUp}></Route>
-        <Route exact path="/book" component={Book}></Route>
+        <Route exact path="/book/:id" component={Book}></Route>
         <Route exact path="/profile" component={Profile}></Route>
         <Route exact path="/admin" component={Admin}></Route>
         <Footer />

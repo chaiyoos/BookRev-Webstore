@@ -20,6 +20,16 @@ router.get("/",async (req,res)=>{
     }
 })
 
+router.get("/:id",async (req,res)=>{
+    try {
+        const post=await Book.findById(req.params.id)
+        res.json(post)  
+    } catch (error) {
+        console.error(error.message)
+        res.status(500).json({message:"server error"})
+    }
+})
+
 //AUTH TEST ROUTE
 
 
