@@ -39,13 +39,13 @@ const Signin = () => {
       if (res.data.loggedIn) {
         history.push("/explore");
       }
-      console.log(res.data.user)
+      console.log(res.data.user);
       // const dataSet={
       //   'user':JSON.stringify(res.data.user),
       //   'token':JSON.stringify(res.data.token)
       // }
-      localStorage.setItem('user',res.data.user)
-      localStorage.setItem('token',res.data.token)
+      localStorage.setItem("user", res.data.user);
+      localStorage.setItem("token", res.data.token);
     } catch (error) {
       console.error(error.message);
     }
@@ -53,12 +53,10 @@ const Signin = () => {
     console.log(data, headers);
   };
 
-
-
   return (
     <div className="signin">
       <form className="signin-form" onSubmit={handleSubmit}>
-        <h3 className="signin-h">signin</h3>
+        <h3 className="signin-h">SignIn</h3>
 
         <img src={img} alt="signin img" className="form-img" />
 

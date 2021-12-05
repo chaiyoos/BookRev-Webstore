@@ -1,14 +1,15 @@
 import React from "react";
 import BookRevButton from "../Button";
 import "./style.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  
   return (
-    <div className="card" key={props.key} 
+    <div
+      className="card"
+      key={props.key}
       bookID={props.bookID}
-      className="explore-card"
+      // className="explore-card"
       title={props.title}
       author={props.author}
       imgsrc={props.imageLink}
@@ -39,9 +40,13 @@ const Card = (props) => {
       <div className="card-img-cont">
         <img src={props.imgsrc} alt="card-img" className="card-img" />
       </div>
-      <div className="card-btn">
-        <Link exact to={`/books/${props.bookID}`} ><BookRevButton value="View"  /></Link>
-      </div>
+      {/* <div className="card-btn"> */}
+      <Link exact to={`/books/${props.bookID}`} className="card-btn">
+        {/* <div> */}
+        <BookRevButton value="View" />
+        {/* </div> */}
+      </Link>
+      {/* </div> */}
     </div>
   );
 };

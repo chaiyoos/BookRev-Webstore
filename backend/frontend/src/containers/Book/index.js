@@ -7,7 +7,6 @@ import tfb from "../../assets/thriftbooks.png";
 import ReviewCard from "../../components/ReviewCard";
 
 const Book = (props) => {
-  
   // axios.get(`/books/`).then(res=>{
   //   console.log(res)
   // }).catch(error=>{
@@ -19,7 +18,7 @@ const Book = (props) => {
       <div className="row justify-content-between">
         <div className="col-md-5 img-cont">
           <img
-            src={props.imgsrc}
+            src="https://m.media-amazon.com/images/I/51pYZS7IWcL.jpg"
             alt="book-img"
             className="book-page-img"
           />

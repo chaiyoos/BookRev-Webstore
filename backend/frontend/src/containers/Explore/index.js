@@ -4,6 +4,7 @@ import Card from "../../components/Card";
 import FilterButton from "../../components/FilterButton";
 import img from "../../assets/filter.png";
 import "./style.css";
+import Fade from "react-reveal/Fade";
 
 const Explore = (props) => {
   const [post, setPost] = useState([]);
@@ -15,33 +16,31 @@ const Explore = (props) => {
         const books = res.data;
         setPost(books);
       } catch (error) {
-        console.error(error.message)
+        console.error(error.message);
       }
-     
     };
     mounted();
   }, []);
 
   let renderBooks;
   if (post.length > 0) {
-    
     renderBooks = post.map((post) => {
       // console.log(post._id)
       return (
-        <div className="col-3"  >
-          <Card
-            key={post._id}
-            bookID={post._id}
-            className="explore-card"
-            title={post.name}
-            author={post.author}
-            imgsrc={post.imageLink}
-            rating={3}
-           
-          />
-        </div>
+        <Fade>
+          <div className="col-3">
+            <Card
+              key={post._id}
+              bookID={post._id}
+              className="explore-card"
+              title={post.name}
+              author={post.author}
+              imgsrc={post.imageLink}
+              rating={3}
+            />
+          </div>
+        </Fade>
       );
-      
     });
   }
 
@@ -61,7 +60,7 @@ const Explore = (props) => {
   // </div>
 
   // const checkUser=()=>{
-    
+
   // }
 
   return (
@@ -74,24 +73,37 @@ const Explore = (props) => {
 
         <hr />
         <h5 className="filter-cat">By Genre</h5>
-        <div className="filter-btn">
-          <FilterButton value="Adventure" />
-        </div>
-        <div className="filter-btn">
-          <FilterButton value="Action" />
-        </div>
-        <div className="filter-btn">
-          <FilterButton value="Biography" />
-        </div>
-        <div className="filter-btn">
-          <FilterButton value="History" />
-        </div>
-        <div className="filter-btn">
-          <FilterButton value="Fantasy" />
-        </div>
-        <div className="filter-btn">
-          <FilterButton value="Romance" />
-        </div>
+
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="Adventure" />
+          </div>
+        </Fade>
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="Action" />
+          </div>
+        </Fade>
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="Biography" />
+          </div>
+        </Fade>
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="History" />
+          </div>
+        </Fade>
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="Fantasy" />
+          </div>
+        </Fade>
+        <Fade bottom>
+          <div className="filter-btn">
+            <FilterButton value="Romance" />
+          </div>
+        </Fade>
 
         <h5 className="filter-cat">By Rating</h5>
       </div>
